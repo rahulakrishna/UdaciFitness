@@ -5,28 +5,48 @@ import React from 'react'
 import {
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  StyleSheet
 } from 'react-native'
 import {Entypo,FontAwesome} from '@expo/vector-icons'
+import {purple,white} from '../utils/colors'
 
 export default function UdaciSteppers({max,unit, step, value, onIncrement, onDecrement}) {
     return(
-        <View>
-            <TouchableOpacity onPress={onDecrement}>
+        <View style={[styles.row,{justifyContent: 'space-between',padding: 10}]}>
+            <TouchableOpacity onPress={onDecrement} style={styles.androidBtn}>
               <FontAwesome
                 name='minus'
                 size={30}
-                color={'black'}
+                color={white}
               />
             </TouchableOpacity>
-            <Text>{value+' '+unit}</Text>
-            <TouchableOpacity onPress={onIncrement}>
+            <Text style={styles.value}>{value+' '+unit}</Text>
+            <TouchableOpacity onPress={onIncrement} style={styles.androidBtn}>
               <FontAwesome
                 name='plus'
                 size={30}
-                color={'black'}
+                color={white}
               />
             </TouchableOpacity>
         </View>
     )
 }
+
+const styles=StyleSheet.create({
+  row:{
+    flexDirection: 'row',
+    flex:1,
+    alignItems:'center'
+  },
+  androidBtn:{
+    margin: 5,
+    backgroundColor: purple,
+    padding:10,
+    borderRadius: 5
+  },
+  value:{
+    fontSize: 24,
+    fontWeight: 'bold'
+  }
+})
