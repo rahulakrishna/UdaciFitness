@@ -1,5 +1,5 @@
 export const RECIEVE_ENTRIES='RECIEVE_ENTRIES'
-export const ADD_ENTRIES='ADD_ENTRIES'
+export const ADD_ENTRY='ADD_ENTRY'
 
 export function recieveEntries(entries){
 	return{
@@ -9,8 +9,9 @@ export function recieveEntries(entries){
 }
 
 export function addEntry(entry){
+	console.log(entry)
 	return{
-		type:ADD_ENTRIES,
+		type:ADD_ENTRY,
 		entry
 	}
 }
