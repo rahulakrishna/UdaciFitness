@@ -20,7 +20,9 @@ export default function UdaciSlider({max,unit,step,value,onChange}) {
                 }
               }
             />
-            <Text style={styles.value}>{value+' '+unit}</Text>
+            <View style={styles.metricCounter}>
+              <Text style={{fontSize: 24,fontWeight:'bold'}}>{value+' '+unit}</Text>
+            </View>
         </View>
     )
 }
@@ -35,5 +37,9 @@ const styles=StyleSheet.create({
     fontSize: 24,
     fontWeight:'bold',
     alignItems:'flex-end'
+  },
+  metricCounter:{
+    width:85,
+    justifyContent:'center'
   }
 })
